@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url(./79bec98b-cc45-4cfa-9eae-8403901c3dee.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: #f0f4ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Тёмный overlay, чтобы текст читался */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 15, 40, 0.58);
+    backdrop-filter: blur(3px);
+    z-index: -1;
+}
+
+.weather-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 2.5rem 2rem;
+    border-radius: 24px;
+    background: rgba(20, 30, 80, 0.28);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(100, 140, 255, 0.22);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.6),
+        inset 0 0 30px rgba(80, 120, 255, 0.12);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+.weather-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Форма поиска */
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+input {
+    flex: 1;
+    padding: 14px 18px;
+    font-size: 1.05rem;
+    border: none;
+    border-radius: 50px;
+    background: rgba(40, 50, 100, 0.55);
+    color: white;
+    outline: none;
+    transition: all 0.3s;
+}
+
+input::placeholder {
+    color: rgba(200, 220, 255, 0.7);
+}
+
+input:focus {
+    background: rgba(60, 80, 140, 0.7);
+    box-shadow: 0 0 0 3px rgba(100, 180, 255, 0.4);
+}
+
+button {
+    padding: 0 24px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #5b8cff, #a78bff);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 25px rgba(100, 180, 255, 0.6);
+}
+
+/* Карточка с погодой */
+.card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.weather-icon {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem;
+    filter: drop-shadow(0 8px 20px rgba(180, 220, 255, 0.6));
+}
+
+.cityName {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    background: linear-gradient(90deg, #d0e0ff, #c0aaff, #d0e0ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 4px 15px rgba(120, 100, 255, 0.4);
+}
+
+.temp {
+    font-size: 4.8rem;
+    font-weight: 300;
+    margin: 0.3rem 0;
+    color: #f0f8ff;
+    text-shadow: 0 6px 25px rgba(0, 80, 220, 0.5);
+}
+
+.condition {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    margin-top: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+/* Адаптив */
+@media (max-width: 480px) {
+    .weather-card {
+        padding: 2rem 1.4rem;
+    }
+    .temp {
+        font-size: 4rem;
+    }
+    .cityName {
+        font-size: 2.2rem;
+    }
+}
+.i1{
+    filter: drop-shadow(0 8px 20px rgba(180, 220, 255, 0.6));
+    margin: 0  0 0 10px;
+}

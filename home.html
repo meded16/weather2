@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода в Ташкенте</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#5b8cff">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+    <div class="weather-card">
+        <form id="weather-form">
+            <input type="text" id="city-input" placeholder="Введите город..." autocomplete="off">
+            <button type="submit">Поиск</button>
+        </form>
+
+        <div class="card hidden">
+            <img class="weather-icon" src="" alt="Погода">
+            <h1 class="cityName"></h1>
+            <p class="temp"></p>
+            <p class="condition"></p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
